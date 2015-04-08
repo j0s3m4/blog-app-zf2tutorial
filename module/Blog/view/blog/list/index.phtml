@@ -1,0 +1,15 @@
+<h1 style="text-align:center">Blog App</h1>
+<hr>
+<?php
+	foreach ($this->posts as $post)
+	{
+		?>
+	    <article>
+	        <h1 id="post<?php echo $post->getId();?>"><?= $post->getTitle();?></h1>
+	        <p>
+	            <?php echo $post->getText(); ?>
+	        </p>
+	    </article>
+		<?php
+	}
+?>
