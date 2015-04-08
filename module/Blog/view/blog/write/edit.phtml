@@ -1,13 +1,15 @@
-<h1>WriteController::editAction()</h1>
+<h1>Edit the post</h1>
+<small>WriteController::editAction()</small>
 <?php
-$form = $this->form;
-$form->setAttribute('action', $this->url('blog/edit', array(), true));
-$form->prepare();
+	$form = $this->form;
+	$form->setAttribute('action', $this->url('blog/edit', array(), true));
+	$form->prepare();
 
-$form->get('submit')->setValue('Update Post');
+	$form->get('submit')->setValue('Update Post');
 
-echo $this->form()->openTag($form);
+	echo $this->form()->openTag($form);
 
-echo $this->formCollection($form);
+	echo $this->formCollection($form);
 
-echo $this->form()->closeTag();
+	echo $this->form()->closeTag();
+?>

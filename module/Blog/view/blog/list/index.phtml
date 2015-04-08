@@ -1,14 +1,20 @@
-<h1 style="text-align:center">Blog App</h1>
+<h1 style="text-align:center">Blog App <a title="New Entry" style="float:right" href="/blog/add">+</a></h1>
 <hr>
+
 <?php
 	foreach ($this->posts as $post)
 	{
 		?>
 	    <article>
-	        <h1 id="post<?php echo $post->getId();?>"><?= $post->getTitle();?></h1>
+	        <a href="blog/<?php echo $post->getId();?>"><h1 id="post<?php echo $post->getId();?>"><?= $post->getTitle();?></h1></a>
 	        <p>
 	            <?php echo $post->getText(); ?>
 	        </p>
+	        <p>
+	        	<a href="blog/edit/<?php echo $post->getId();?>">Edit</a>
+	        	<a href="blog/delete/<?php echo $post->getId();?>">Delete</a>
+	    	</p>
+	    	<hr>
 	    </article>
 		<?php
 	}

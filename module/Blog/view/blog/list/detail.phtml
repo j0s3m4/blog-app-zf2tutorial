@@ -1,8 +1,5 @@
-<h1>Post Details</h1>
+<h1><?php echo $this->escapeHtml($this->post->getTitle());?></h1>
+<hr>
+<p><?php echo $this->escapeHtml($this->post->getText());?></p>
 
-<dl>
-    <dt>Post Title</dt>
-    <dd><?php echo $this->escapeHtml($this->post->getTitle());?></dd>
-    <dt>Post Text</dt>
-    <dd><?php echo $this->escapeHtml($this->post->getText());?></dd>
-</dl>
+<a href="/blog">&larr; Back to the blog</a>

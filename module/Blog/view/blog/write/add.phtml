@@ -1,11 +1,15 @@
-<h1>WriteController::addAction()</h1>
+<h1>Add a new post</h1>
+<small>WriteController::addAction()</small>
 <?php
-$form = $this->form;
-$form->setAttribute('action', $this->url());
-$form->prepare();
+	$form = $this->form;
+	$form->setAttribute('action', $this->url());
+	$form->prepare();
 
-echo $this->form()->openTag($form);
+	echo $this->form()->openTag($form);
 
-echo $this->formCollection($form);
+	echo $this->formCollection($form);
 
-echo $this->form()->closeTag();
+	echo $this->form()->closeTag();
+?>
+
+<br><a href="/blog">&larr; Back to the blog</a>
