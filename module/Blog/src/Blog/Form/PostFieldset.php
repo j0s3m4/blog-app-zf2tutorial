@@ -19,17 +19,49 @@
 
             $this->add(array(
                 'type' => 'text',
+                'name' => 'title',
+                'options' => array(
+                    'label' => 'Title'
+                )
+            ));
+
+            $this->add(array(
+                'type' => 'textarea',
                 'name' => 'text',
                 'options' => array(
-                    'label' => 'The Text'
+                    'label' => 'Description'
+                )
+            ));
+
+            $this->add(array(
+                'type' => 'textarea',
+                'name' => 'content',
+                'options' => array(
+                    'label' => 'Content'
                 )
             ));
 
             $this->add(array(
                 'type' => 'text',
-                'name' => 'title',
+                'name' => 'tag',
                 'options' => array(
-                    'label' => 'Blog Title'
+                    'label' => 'Tag'
+                )
+            ));
+
+            $this->add(array(
+                'type' => 'date',
+                'name' => 'date',
+                'options' => array(
+                    'label' => 'Date'
+                )
+            ));
+
+            $this->add(array(
+                'type' => 'text',
+                'name' => 'urlimage',
+                'options' => array(
+                    'label' => 'Url Image'
                 )
             ));
         }

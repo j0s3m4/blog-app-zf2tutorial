@@ -1,5 +1,63 @@
-<h1><?php echo $this->escapeHtml($this->post->getTitle());?></h1>
-<hr>
-<p><?php echo $this->escapeHtml($this->post->getText());?></p>
+<h1><span style="color: #cc0000">HELLO!</span> Blog App<a title="Back to blog" style="float:right" href="/">&rarr;</a></h1>
 
-<a href="/blog">&larr; Back to the blog</a>
+<hr>
+
+<div class="row">
+	<div class="col-md-4">
+		<img class="thumbnail" src="<?php echo $this->escapeHtml($this->post->getUrlimage());?>" />
+	</div>
+	<div class="col-md-8">
+		<h2><?php echo $this->escapeHtml($this->post->getTitle());?></h2>
+		<p>
+			<span class="fecha">
+				<?php echo $this->escapeHtml(date("j F Y", strtotime($post->getDate())));?>
+			</span>
+			<span class="tags">
+				Tag: <strong><?php echo $this->escapeHtml($this->post->getTag());?></strong>
+			</span>
+			<div style="clear:both"></div>
+		</p>
+		<p class="aJust"><?php echo $this->escapeHtml($this->post->getText());?></p>
+		<p class="aJust"><?php echo $this->escapeHtml($this->post->getContent());?></p>
+
+		<p class="aRight"><a href="/blog/edit/<?php echo $post->getId();?>">Edit</a> <a href="/blog/delete/<?php echo $post->getId();?>">Delete</a></p>
+	</div>
+</div>
+
+<style>
+	article a
+	{
+		color: #333333;
+	}
+	article a:hover, h1 a, h1 a:hover
+	{
+		color: #cc0000;
+	}
+	.aJust
+	{
+		text-align: justify;
+	}
+	.aRight
+	{
+		text-align: right;
+	}
+	.aRight a
+	{
+		color: #999;
+	}
+	img.thumbnail
+	{
+		width: 100%;
+		height: auto;
+	}
+	.fecha
+	{
+		font-weight: bold;
+		text-transform: uppercase;
+		float: left;
+	}
+	.tags
+	{
+		float: right;
+	}
+</style>

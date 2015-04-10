@@ -50,5 +50,6 @@
         public function has($name)
         {
             // TODO: Implement has() method.
-    }}
+        }
+    }
 ?>

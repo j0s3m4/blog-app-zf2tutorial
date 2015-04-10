@@ -1,10 +1,25 @@
-<h1>DeleteController::deleteAction()</h1>
-<p>
-    Are you sure that you want to delete
-    '<?php echo $this->escapeHtml($this->post->getTitle()); ?>' by
-    '<?php echo $this->escapeHtml($this->post->getText()); ?>'?
-</p>
+<h1><span style="color: #cc0000">HELLO!</span> Blog App <a title="Back to blog" style="float:right" href="/">&rarr;</a></h1>
+<hr>
+
+<h2>Are you sure that you want to delete
+    '<?php echo $this->escapeHtml($this->post->getTitle()); ?>'?</h2>
+
+<small>DeleteController::deleteAction()</small>
+
+<br>
+
 <form action="<?php echo $this->url('blog/delete', array(), true) ?>" method="post">
     <input type="submit" name="delete_confirmation" value="yes">
     <input type="submit" name="delete_confirmation" value="no">
 </form>
+
+<style>
+	article a
+	{
+		color: #333333;
+	}
+	article a:hover, h1 a, h1 a:hover
+	{
+		color: #cc0000;
+	}
+</style>

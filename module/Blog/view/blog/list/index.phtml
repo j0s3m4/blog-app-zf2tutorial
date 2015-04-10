@@ -1,21 +1,70 @@
-<h1 style="text-align:center">Blog App <a title="New Entry" style="float:right" href="/blog/add">+</a></h1>
+<h1><span style="color: #cc0000">HELLO!</span> Blog App <a title="New Entry" style="float:right" href="/blog/add">+</a></h1>
 <hr>
-
 <?php
 	foreach ($this->posts as $post)
 	{
 		?>
 	    <article>
-	        <a href="blog/<?php echo $post->getId();?>"><h1 id="post<?php echo $post->getId();?>"><?= $post->getTitle();?></h1></a>
-	        <p>
-	            <?php echo $post->getText(); ?>
-	        </p>
-	        <p>
-	        	<a href="blog/edit/<?php echo $post->getId();?>">Edit</a>
-	        	<a href="blog/delete/<?php echo $post->getId();?>">Delete</a>
-	    	</p>
+	        <a href="blog/<?php echo $post->getId();?>"><h2 id="post<?php echo $post->getId();?>"><?php echo $post->getTitle();?></h2></a>
+	        
+	        <div class="row">
+	        	<div class="col-md-3">
+	        		<img class="thumbnail" src="<?php echo $post->getUrlImage(); ?>" />
+	        	</div>
+	        	<div class="col-md-9">
+			        <p>
+						<span class="fecha">
+							<?php echo date("j F Y", strtotime($post->getDate()));?>
+						</span>
+						<span class="tags">
+							Tag: <strong><?php echo $post->getTag();?></strong>
+						</span>
+						<div style="clear:both"></div>
+					</p>
+			        <p class="aJust"><?php echo $post->getText(); ?></p>
+			        <p class="aRight"><a href="/blog/edit/<?php echo $post->getId();?>">Edit</a> <a href="/blog/delete/<?php echo $post->getId();?>">Delete</a></p>
+			    </div>
+	    	</div>
 	    	<hr>
 	    </article>
 		<?php
 	}
 ?>
+
+<style>
+	article a
+	{
+		color: #333333;
+	}
+	article a:hover, h1 a, h1 a:hover
+	{
+		color: #cc0000;
+	}
+	.aJust
+	{
+		text-align: justify;
+	}
+	.aRight
+	{
+		text-align: right;
+	}
+	.aRight a
+	{
+		color: #999;
+	}
+	img.thumbnail
+	{
+		width: 100%;
+		height: auto;
+	}
+	.fecha
+	{
+		font-weight: bold;
+		text-transform: uppercase;
+		float: left;
+	}
+	.tags
+	{
+		float: right;
+	}
+</style>

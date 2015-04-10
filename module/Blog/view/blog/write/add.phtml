@@ -1,4 +1,7 @@
-<h1>Add a new post</h1>
+<h1><span style="color: #cc0000">HELLO!</span> Blog App <a title="Back to blog" style="float:right" href="/">&rarr;</a></h1>
+<hr>
+
+<h2>Add a new post</h2>
 <small>WriteController::addAction()</small>
 <?php
 	$form = $this->form;
@@ -6,10 +9,22 @@
 	$form->prepare();
 
 	echo $this->form()->openTag($form);
-
 	echo $this->formCollection($form);
-
 	echo $this->form()->closeTag();
 ?>
 
-<br><a href="/blog">&larr; Back to the blog</a>
+<style>
+	form label, form label span
+	{
+		display: block;
+	}
+	form input[type="text"]
+	{
+		width: 100%;
+	}
+	form textarea
+	{
+		width: 100%;
+		height: 100px;
+	}
+</style>
